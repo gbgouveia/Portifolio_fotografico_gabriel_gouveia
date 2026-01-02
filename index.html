@@ -37,7 +37,7 @@
             </a>
           </li>
           <li><a href="#client">DEPOIMENTOS</a></li>
-          <li><a href="#blog">BLOG</a></li>
+          <li><a href="#Agendamento">AGENDAMENTO</a></li>
           <li><a href="#contact">CONTATO</a></li>
         </ul>
       </nav>
@@ -164,22 +164,116 @@
       <div class="gallery__btn"></div>
     </section>
 
-    <section class="blog" id="blog">
-      <div class="section__container blog__container">
-        <div class="blog__content">
-          <h2 class="section__header">~ BLOG ~</h2>
-          <h4>Fotografia que Conta Histórias</h4>
-          <p>
-            Aqui compartilho reflexões, experiências e bastidores do meu
-            trabalho, mostrando que fotografar vai muito além de apertar um
-            botão.
-          </p>
-          <div class="blog__btn">
-            <button class="btn">Ler mais</button>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="Agendamento" id="Agendamento">
+  <h2 class="agendamento-titulo" id="titulo-agendamento">Agendamento</h2>
+
+  <form class="formulario-contato" id="form-agendamento" onsubmit="enviarWhats(event)">
+
+    <input
+      type="text"
+      id="input-nome"
+      name="nome"
+      placeholder="Nome completo"
+      required
+    />
+
+    <input
+      type="tel"
+      id="input-whatsapp"
+      name="whatsapp"
+      placeholder="WhatsApp (DDD)"
+      required
+    />
+
+    <input
+      type="email"
+      id="input-email"
+      name="email"
+      placeholder="E-mail"
+      required
+    />
+
+    <select
+      id="select-servico"
+      name="servico"
+      required
+    >
+      <option value="">Tipo de serviço</option>
+      <option value="ensaio">Ensaio Fotográfico</option>
+      <option value="evento">Evento</option>
+      <option value="casamento">Casamento</option>
+      <option value="formatura">Formatura</option>
+      <option value="outro">Outro</option>
+    </select>
+
+    <div class="campo-form">
+      <label for="input-data">Data do evento</label>
+      <input type="date" id="input-data" required />
+    </div>
+
+    <input
+      type="text"
+      id="input-cidade"
+      name="cidade"
+      placeholder="Cidade / Local do evento"
+      required
+    />
+
+    <textarea
+      id="textarea-objetivo"
+      name="objetivo"
+      placeholder="Qual é o objetivo do ensaio ou evento?"
+      rows="4"
+      required
+    ></textarea>
+
+    <button type="submit" class="botao-agendamento">
+  Enviar agendamento
+</button>
+
+
+  </form>
+</section>
+
+
+<script>
+  function enviarWhats(event) {
+    event.preventDefault()
+
+    const nome = document.getElementById('input-nome').value
+    const telefone = document.getElementById('input-whatsapp').value
+    const email = document.getElementById('input-email').value
+    const servico = document.getElementById('select-servico').value
+    const data = document.getElementById('input-data').value
+    const cidade = document.getElementById('input-cidade').value
+    const objetivo = document.getElementById('textarea-objetivo').value
+
+    const meuTelefone = '556193154866'
+
+    const texto = `Olá! Me chamo ${nome}.
+
+Gostaria de informações sobre um serviço de fotografia. Seguem meus dados:
+
+Tipo de serviço: ${servico}
+Data do evento: ${data}
+Local / Cidade: ${cidade}
+
+Objetivo do ensaio ou evento:
+${objetivo}
+
+WhatsApp: ${telefone}
+E-mail: ${email}
+`
+
+    const msgFormatada = encodeURIComponent(texto)
+    const url = `https://wa.me/${meuTelefone}?text=${msgFormatada}`
+
+    window.open(url, '_blank')
+  }
+</script>
+
+
+
 
     <section class="section__container instagram__container">
       <h2 class="section__header">~ INSTAGRAM ~</h2>
@@ -200,11 +294,16 @@
         <div class="footer__col">
           <img src="assets/logo-dark.png" alt="logo" />
           <div class="footer__socials">
-            <a href="#"><i class="ri-facebook-fill"></i></a>
-            <a href="#"><i class="ri-instagram-line"></i></a>
-            <a href="#"><i class="ri-twitter-fill"></i></a>
-            <a href="#"><i class="ri-youtube-fill"></i></a>
-            <a href="#"><i class="ri-pinterest-line"></i></a>
+
+            <a
+            href="https://www.instagram.com/gb.gouveia_ps?igsh=MTBhdHNid2JxZHF1NQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="ri-instagram-line"></i>
+          </a>
+
+
           </div>
         </div>
         <div class="footer__col">
@@ -213,7 +312,7 @@
             <li><a href="#about">SOBRE</a></li>
             <li><a href="#service">SERVIÇOS</a></li>
             <li><a href="#client">DEPOIMENTOS</a></li>
-            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#Agendamento">AGENDAMENTO</a></li>
             <li><a href="#contact">CONTATO</a></li>
           </ul>
         </div>

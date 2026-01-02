@@ -564,3 +564,134 @@ nav {
     gap: 2rem;
   }
 }
+
+
+.Agendamento {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("assets/blog.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 8rem 1rem;
+}
+
+.agendamento-titulo {
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  color: var(--white);
+  text-align: center;
+}
+
+/* Container central como blog__content */
+.formulario-contato {
+  max-width: 700px;
+  margin-inline: auto;
+  display: grid;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+/* Inputs no estilo clean */
+.formulario-contato input,
+.formulario-contato select,
+.formulario-contato textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Placeholder */
+.formulario-contato input::placeholder,
+.formulario-contato textarea::placeholder {
+  color: var(--text-light);
+}
+
+/* Textarea */
+.formulario-contato textarea {
+  resize: none;
+}
+
+/* Botão igual ao do blog */
+.formulario-contato button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formulario-contato button:hover {
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
+/* ===============================
+   AGENDAMENTO LARGO + TÍTULO EM CIMA
+================================ */
+
+
+@media (width > 768px) {
+  .Agendamento {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .agendamento-titulo {
+    grid-column: 2 / 3;
+    width: 900px;              /* largura real */
+    justify-self: center;         /* alinha pelo fim da coluna */
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .formulario-contato {
+    grid-column: 2 / 3;
+    width: 900px;              /* MESMA largura */
+    justify-self: end;         /* MESMO eixo */
+    padding: 2.5rem 3rem;
+  }
+}
+
+
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo-form label {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--extra-light);
+}
+
+.campo-form input[type="date"] {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--extra-light);
+  border-radius: 6px;
+  background-color: "#fffff";
+  color: var(--text-dark);
+}
+
+.campo-form input[type="date"]:focus {
+  outline: none;
+  border-color: var(--text-dark);
+}
